@@ -1,0 +1,27 @@
+{
+  "name": "cliente",
+  "version": "1.0.0",
+  "description": "sistema cliente para SD UNI",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon ./app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alvar01o/cliente-issuetracker.git"
+  },
+  "author": "Alvaro Mercado",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alvar01o/cliente-issuetracker/issues"
+  },
+  "homepage": "https://github.com/Alvar01o/cliente-issuetracker#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-hbs": "^2.1.2",
+    "memcached": "^2.2.2",
+    "path": "^0.12.7",
+    "request": "^2.88.0"
+  }
+}

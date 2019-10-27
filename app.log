@@ -1,0 +1,937 @@
+Server is up on port 3003
+[33m[nodemon] 1.19.1[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[33m[nodemon] 1.19.1[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+Request a  http://localhost:8080//user
+IncomingMessage {
+  _readableState:
+   ReadableState {
+     objectMode: false,
+     highWaterMark: 16384,
+     buffer: BufferList { head: null, tail: null, length: 0 },
+     length: 0,
+     pipes: null,
+     pipesCount: 0,
+     flowing: true,
+     ended: true,
+     endEmitted: true,
+     reading: false,
+     sync: true,
+     needReadable: false,
+     emittedReadable: false,
+     readableListening: false,
+     resumeScheduled: false,
+     paused: false,
+     emitClose: true,
+     destroyed: false,
+     defaultEncoding: 'utf8',
+     awaitDrain: 0,
+     readingMore: true,
+     decoder: null,
+     encoding: null },
+  readable: false,
+  _events:
+   [Object: null prototype] {
+     end: [ [Function: responseOnEnd], [Function] ],
+     close: [ [Function], [Function] ],
+     data: [Function],
+     error: [Function] },
+  _eventsCount: 4,
+  _maxListeners: undefined,
+  socket:
+   Socket {
+     connecting: false,
+     _hadError: false,
+     _handle:
+      TCP {
+        reading: true,
+        onread: [Function: onStreamRead],
+        onconnection: null,
+        [Symbol(owner)]: [Circular] },
+     _parent: null,
+     _host: 'localhost',
+     _readableState:
+      ReadableState {
+        objectMode: false,
+        highWaterMark: 16384,
+        buffer: BufferList { head: null, tail: null, length: 0 },
+        length: 0,
+        pipes: null,
+        pipesCount: 0,
+        flowing: true,
+        ended: false,
+        endEmitted: false,
+        reading: true,
+        sync: false,
+        needReadable: true,
+        emittedReadable: false,
+        readableListening: false,
+        resumeScheduled: false,
+        paused: false,
+        emitClose: false,
+        destroyed: false,
+        defaultEncoding: 'utf8',
+        awaitDrain: 0,
+        readingMore: false,
+        decoder: null,
+        encoding: null },
+     readable: true,
+     _events:
+      [Object: null prototype] {
+        end: [Function: onReadableStreamEnd],
+        free: [Function: onFree],
+        close: [Array],
+        agentRemove: [Function: onRemove],
+        drain: [Function: ondrain],
+        error: [Function: socketErrorListener],
+        finish: [Function] },
+     _eventsCount: 7,
+     _maxListeners: undefined,
+     _writableState:
+      WritableState {
+        objectMode: false,
+        highWaterMark: 16384,
+        finalCalled: true,
+        needDrain: false,
+        ending: true,
+        ended: true,
+        finished: false,
+        destroyed: false,
+        decodeStrings: false,
+        defaultEncoding: 'utf8',
+        length: 0,
+        writing: false,
+        corked: 0,
+        sync: false,
+        bufferProcessing: false,
+        onwrite: [Function: bound onwrite],
+        writecb: null,
+        writelen: 0,
+        bufferedRequest: null,
+        lastBufferedRequest: null,
+        pendingcb: 1,
+        prefinished: false,
+        errorEmitted: false,
+        emitClose: false,
+        bufferedRequestCount: 0,
+        corkedRequestsFree: [Object] },
+     writable: false,
+     allowHalfOpen: false,
+     _sockname: null,
+     _pendingData: null,
+     _pendingEncoding: '',
+     server: null,
+     _server: null,
+     parser: null,
+     _httpMessage:
+      ClientRequest {
+        _events: [Object],
+        _eventsCount: 5,
+        _maxListeners: undefined,
+        output: [],
+        outputEncodings: [],
+        outputCallbacks: [],
+        outputSize: 0,
+        writable: true,
+        _last: true,
+        chunkedEncoding: false,
+        shouldKeepAlive: false,
+        useChunkedEncodingByDefault: false,
+        sendDate: false,
+        _removedConnection: false,
+        _removedContLen: false,
+        _removedTE: false,
+        _contentLength: 0,
+        _hasBody: true,
+        _trailer: '',
+        finished: true,
+        _headerSent: true,
+        socket: [Circular],
+        connection: [Circular],
+        _header:
+         'GET //user/page/1 HTTP/1.1\r\nhost: localhost:8080\r\naccept: application/json\r\nConnection: close\r\n\r\n',
+        _onPendingData: [Function: noopPendingOutput],
+        agent: [Agent],
+        socketPath: undefined,
+        timeout: undefined,
+        method: 'GET',
+        path: '//user/page/1',
+        _ended: true,
+        res: [Circular],
+        aborted: undefined,
+        timeoutCb: null,
+        upgradeOrConnect: false,
+        parser: null,
+        maxHeadersCount: null,
+        [Symbol(isCorked)]: false,
+        [Symbol(outHeadersKey)]: [Object] },
+     [Symbol(asyncId)]: 27,
+     [Symbol(lastWriteQueueSize)]: 0,
+     [Symbol(timeout)]: null,
+     [Symbol(kBytesRead)]: 0,
+     [Symbol(kBytesWritten)]: 0 },
+  connection:
+   Socket {
+     connecting: false,
+     _hadError: false,
+     _handle:
+      TCP {
+        reading: true,
+        onread: [Function: onStreamRead],
+        onconnection: null,
+        [Symbol(owner)]: [Circular] },
+     _parent: null,
+     _host: 'localhost',
+     _readableState:
+      ReadableState {
+        objectMode: false,
+        highWaterMark: 16384,
+        buffer: BufferList { head: null, tail: null, length: 0 },
+        length: 0,
+        pipes: null,
+        pipesCount: 0,
+        flowing: true,
+        ended: false,
+        endEmitted: false,
+        reading: true,
+        sync: false,
+        needReadable: true,
+        emittedReadable: false,
+        readableListening: false,
+        resumeScheduled: false,
+        paused: false,
+        emitClose: false,
+        destroyed: false,
+        defaultEncoding: 'utf8',
+        awaitDrain: 0,
+        readingMore: false,
+        decoder: null,
+        encoding: null },
+     readable: true,
+     _events:
+      [Object: null prototype] {
+        end: [Function: onReadableStreamEnd],
+        free: [Function: onFree],
+        close: [Array],
+        agentRemove: [Function: onRemove],
+        drain: [Function: ondrain],
+        error: [Function: socketErrorListener],
+        finish: [Function] },
+     _eventsCount: 7,
+     _maxListeners: undefined,
+     _writableState:
+      WritableState {
+        objectMode: false,
+        highWaterMark: 16384,
+        finalCalled: true,
+        needDrain: false,
+        ending: true,
+        ended: true,
+        finished: false,
+        destroyed: false,
+        decodeStrings: false,
+        defaultEncoding: 'utf8',
+        length: 0,
+        writing: false,
+        corked: 0,
+        sync: false,
+        bufferProcessing: false,
+        onwrite: [Function: bound onwrite],
+        writecb: null,
+        writelen: 0,
+        bufferedRequest: null,
+        lastBufferedRequest: null,
+        pendingcb: 1,
+        prefinished: false,
+        errorEmitted: false,
+        emitClose: false,
+        bufferedRequestCount: 0,
+        corkedRequestsFree: [Object] },
+     writable: false,
+     allowHalfOpen: false,
+     _sockname: null,
+     _pendingData: null,
+     _pendingEncoding: '',
+     server: null,
+     _server: null,
+     parser: null,
+     _httpMessage:
+      ClientRequest {
+        _events: [Object],
+        _eventsCount: 5,
+        _maxListeners: undefined,
+        output: [],
+        outputEncodings: [],
+        outputCallbacks: [],
+        outputSize: 0,
+        writable: true,
+        _last: true,
+        chunkedEncoding: false,
+        shouldKeepAlive: false,
+        useChunkedEncodingByDefault: false,
+        sendDate: false,
+        _removedConnection: false,
+        _removedContLen: false,
+        _removedTE: false,
+        _contentLength: 0,
+        _hasBody: true,
+        _trailer: '',
+        finished: true,
+        _headerSent: true,
+        socket: [Circular],
+        connection: [Circular],
+        _header:
+         'GET //user/page/1 HTTP/1.1\r\nhost: localhost:8080\r\naccept: application/json\r\nConnection: close\r\n\r\n',
+        _onPendingData: [Function: noopPendingOutput],
+        agent: [Agent],
+        socketPath: undefined,
+        timeout: undefined,
+        method: 'GET',
+        path: '//user/page/1',
+        _ended: true,
+        res: [Circular],
+        aborted: undefined,
+        timeoutCb: null,
+        upgradeOrConnect: false,
+        parser: null,
+        maxHeadersCount: null,
+        [Symbol(isCorked)]: false,
+        [Symbol(outHeadersKey)]: [Object] },
+     [Symbol(asyncId)]: 27,
+     [Symbol(lastWriteQueueSize)]: 0,
+     [Symbol(timeout)]: null,
+     [Symbol(kBytesRead)]: 0,
+     [Symbol(kBytesWritten)]: 0 },
+  httpVersionMajor: 1,
+  httpVersionMinor: 1,
+  httpVersion: '1.1',
+  complete: true,
+  headers:
+   { 'content-type': 'application/json;charset=UTF-8',
+     'transfer-encoding': 'chunked',
+     date: 'Thu, 24 Oct 2019 21:56:57 GMT',
+     connection: 'close' },
+  rawHeaders:
+   [ 'Content-Type',
+     'application/json;charset=UTF-8',
+     'Transfer-Encoding',
+     'chunked',
+     'Date',
+     'Thu, 24 Oct 2019 21:56:57 GMT',
+     'Connection',
+     'close' ],
+  trailers: {},
+  rawTrailers: [],
+  aborted: false,
+  upgrade: false,
+  url: '',
+  method: null,
+  statusCode: 200,
+  statusMessage: '',
+  client:
+   Socket {
+     connecting: false,
+     _hadError: false,
+     _handle:
+      TCP {
+        reading: true,
+        onread: [Function: onStreamRead],
+        onconnection: null,
+        [Symbol(owner)]: [Circular] },
+     _parent: null,
+     _host: 'localhost',
+     _readableState:
+      ReadableState {
+        objectMode: false,
+        highWaterMark: 16384,
+        buffer: BufferList { head: null, tail: null, length: 0 },
+        length: 0,
+        pipes: null,
+        pipesCount: 0,
+        flowing: true,
+        ended: false,
+        endEmitted: false,
+        reading: true,
+        sync: false,
+        needReadable: true,
+        emittedReadable: false,
+        readableListening: false,
+        resumeScheduled: false,
+        paused: false,
+        emitClose: false,
+        destroyed: false,
+        defaultEncoding: 'utf8',
+        awaitDrain: 0,
+        readingMore: false,
+        decoder: null,
+        encoding: null },
+     readable: true,
+     _events:
+      [Object: null prototype] {
+        end: [Function: onReadableStreamEnd],
+        free: [Function: onFree],
+        close: [Array],
+        agentRemove: [Function: onRemove],
+        drain: [Function: ondrain],
+        error: [Function: socketErrorListener],
+        finish: [Function] },
+     _eventsCount: 7,
+     _maxListeners: undefined,
+     _writableState:
+      WritableState {
+        objectMode: false,
+        highWaterMark: 16384,
+        finalCalled: true,
+        needDrain: false,
+        ending: true,
+        ended: true,
+        finished: false,
+        destroyed: false,
+        decodeStrings: false,
+        defaultEncoding: 'utf8',
+        length: 0,
+        writing: false,
+        corked: 0,
+        sync: false,
+        bufferProcessing: false,
+        onwrite: [Function: bound onwrite],
+        writecb: null,
+        writelen: 0,
+        bufferedRequest: null,
+        lastBufferedRequest: null,
+        pendingcb: 1,
+        prefinished: false,
+        errorEmitted: false,
+        emitClose: false,
+        bufferedRequestCount: 0,
+        corkedRequestsFree: [Object] },
+     writable: false,
+     allowHalfOpen: false,
+     _sockname: null,
+     _pendingData: null,
+     _pendingEncoding: '',
+     server: null,
+     _server: null,
+     parser: null,
+     _httpMessage:
+      ClientRequest {
+        _events: [Object],
+        _eventsCount: 5,
+        _maxListeners: undefined,
+        output: [],
+        outputEncodings: [],
+        outputCallbacks: [],
+        outputSize: 0,
+        writable: true,
+        _last: true,
+        chunkedEncoding: false,
+        shouldKeepAlive: false,
+        useChunkedEncodingByDefault: false,
+        sendDate: false,
+        _removedConnection: false,
+        _removedContLen: false,
+        _removedTE: false,
+        _contentLength: 0,
+        _hasBody: true,
+        _trailer: '',
+        finished: true,
+        _headerSent: true,
+        socket: [Circular],
+        connection: [Circular],
+        _header:
+         'GET //user/page/1 HTTP/1.1\r\nhost: localhost:8080\r\naccept: application/json\r\nConnection: close\r\n\r\n',
+        _onPendingData: [Function: noopPendingOutput],
+        agent: [Agent],
+        socketPath: undefined,
+        timeout: undefined,
+        method: 'GET',
+        path: '//user/page/1',
+        _ended: true,
+        res: [Circular],
+        aborted: undefined,
+        timeoutCb: null,
+        upgradeOrConnect: false,
+        parser: null,
+        maxHeadersCount: null,
+        [Symbol(isCorked)]: false,
+        [Symbol(outHeadersKey)]: [Object] },
+     [Symbol(asyncId)]: 27,
+     [Symbol(lastWriteQueueSize)]: 0,
+     [Symbol(timeout)]: null,
+     [Symbol(kBytesRead)]: 0,
+     [Symbol(kBytesWritten)]: 0 },
+  _consuming: false,
+  _dumped: false,
+  req:
+   ClientRequest {
+     _events:
+      [Object: null prototype] {
+        socket: [Function],
+        response: [Function: bound ],
+        error: [Function: bound ],
+        drain: [Function],
+        prefinish: [Function: requestOnPrefinish] },
+     _eventsCount: 5,
+     _maxListeners: undefined,
+     output: [],
+     outputEncodings: [],
+     outputCallbacks: [],
+     outputSize: 0,
+     writable: true,
+     _last: true,
+     chunkedEncoding: false,
+     shouldKeepAlive: false,
+     useChunkedEncodingByDefault: false,
+     sendDate: false,
+     _removedConnection: false,
+     _removedContLen: false,
+     _removedTE: false,
+     _contentLength: 0,
+     _hasBody: true,
+     _trailer: '',
+     finished: true,
+     _headerSent: true,
+     socket:
+      Socket {
+        connecting: false,
+        _hadError: false,
+        _handle: [TCP],
+        _parent: null,
+        _host: 'localhost',
+        _readableState: [ReadableState],
+        readable: true,
+        _events: [Object],
+        _eventsCount: 7,
+        _maxListeners: undefined,
+        _writableState: [WritableState],
+        writable: false,
+        allowHalfOpen: false,
+        _sockname: null,
+        _pendingData: null,
+        _pendingEncoding: '',
+        server: null,
+        _server: null,
+        parser: null,
+        _httpMessage: [Circular],
+        [Symbol(asyncId)]: 27,
+        [Symbol(lastWriteQueueSize)]: 0,
+        [Symbol(timeout)]: null,
+        [Symbol(kBytesRead)]: 0,
+        [Symbol(kBytesWritten)]: 0 },
+     connection:
+      Socket {
+        connecting: false,
+        _hadError: false,
+        _handle: [TCP],
+        _parent: null,
+        _host: 'localhost',
+        _readableState: [ReadableState],
+        readable: true,
+        _events: [Object],
+        _eventsCount: 7,
+        _maxListeners: undefined,
+        _writableState: [WritableState],
+        writable: false,
+        allowHalfOpen: false,
+        _sockname: null,
+        _pendingData: null,
+        _pendingEncoding: '',
+        server: null,
+        _server: null,
+        parser: null,
+        _httpMessage: [Circular],
+        [Symbol(asyncId)]: 27,
+        [Symbol(lastWriteQueueSize)]: 0,
+        [Symbol(timeout)]: null,
+        [Symbol(kBytesRead)]: 0,
+        [Symbol(kBytesWritten)]: 0 },
+     _header:
+      'GET //user/page/1 HTTP/1.1\r\nhost: localhost:8080\r\naccept: application/json\r\nConnection: close\r\n\r\n',
+     _onPendingData: [Function: noopPendingOutput],
+     agent:
+      Agent {
+        _events: [Object],
+        _eventsCount: 1,
+        _maxListeners: undefined,
+        defaultPort: 80,
+        protocol: 'http:',
+        options: [Object],
+        requests: {},
+        sockets: [Object],
+        freeSockets: {},
+        keepAliveMsecs: 1000,
+        keepAlive: false,
+        maxSockets: Infinity,
+        maxFreeSockets: 256 },
+     socketPath: undefined,
+     timeout: undefined,
+     method: 'GET',
+     path: '//user/page/1',
+     _ended: true,
+     res: [Circular],
+     aborted: undefined,
+     timeoutCb: null,
+     upgradeOrConnect: false,
+     parser: null,
+     maxHeadersCount: null,
+     [Symbol(isCorked)]: false,
+     [Symbol(outHeadersKey)]: [Object: null prototype] { host: [Array], accept: [Array] } },
+  request:
+   Request {
+     _events:
+      [Object: null prototype] {
+        error: [Function: bound ],
+        complete: [Function: bound ],
+        pipe: [Function],
+        data: [Function],
+        end: [Function] },
+     _eventsCount: 5,
+     _maxListeners: undefined,
+     callback: [Function],
+     readable: true,
+     writable: true,
+     _qs:
+      Querystring {
+        request: [Circular],
+        lib: [Object],
+        useQuerystring: undefined,
+        parseOptions: {},
+        stringifyOptions: {} },
+     _auth:
+      Auth {
+        request: [Circular],
+        hasAuth: false,
+        sentAuth: false,
+        bearerToken: null,
+        user: null,
+        pass: null },
+     _oauth: OAuth { request: [Circular], params: null },
+     _multipart:
+      Multipart {
+        request: [Circular],
+        boundary: '173637b6-00a2-4632-bfe0-abce70a7f6d6',
+        chunked: false,
+        body: null },
+     _redirect:
+      Redirect {
+        request: [Circular],
+        followRedirect: true,
+        followRedirects: true,
+        followAllRedirects: false,
+        followOriginalHttpMethod: false,
+        allowRedirect: [Function],
+        maxRedirects: 10,
+        redirects: [],
+        redirectsFollowed: 0,
+        removeRefererHeader: false },
+     _tunnel:
+      Tunnel {
+        request: [Circular],
+        proxyHeaderWhiteList: [Array],
+        proxyHeaderExclusiveList: [] },
+     headers: { accept: 'application/json' },
+     setHeader: [Function],
+     hasHeader: [Function],
+     getHeader: [Function],
+     removeHeader: [Function],
+     method: 'GET',
+     localAddress: undefined,
+     pool: {},
+     dests: [],
+     __isRequestRequest: true,
+     _callback: [Function],
+     uri:
+      Url {
+        protocol: 'http:',
+        slashes: true,
+        auth: null,
+        host: 'localhost:8080',
+        port: '8080',
+        hostname: 'localhost',
+        hash: null,
+        search: null,
+        query: null,
+        pathname: '//user/page/1',
+        path: '//user/page/1',
+        href: 'http://localhost:8080//user/page/1' },
+     proxy: null,
+     tunnel: false,
+     setHost: true,
+     originalCookieHeader: undefined,
+     _disableCookies: true,
+     _jar: undefined,
+     port: '8080',
+     host: 'localhost',
+     path: '//user/page/1',
+     _json: true,
+     httpModule:
+      { _connectionListener: [Function: connectionListener],
+        METHODS: [Array],
+        STATUS_CODES: [Object],
+        Agent: [Function],
+        ClientRequest: [Function],
+        globalAgent: [Agent],
+        IncomingMessage: [Function],
+        OutgoingMessage: [Function],
+        Server: [Function],
+        ServerResponse: [Function],
+        createServer: [Function: createServer],
+        get: [Function: get],
+        request: [Function: request],
+        maxHeaderSize: [Getter] },
+     agentClass:
+      { [Function: Agent] super_: [Function], defaultMaxSockets: Infinity },
+     agent:
+      Agent {
+        _events: [Object],
+        _eventsCount: 1,
+        _maxListeners: undefined,
+        defaultPort: 80,
+        protocol: 'http:',
+        options: [Object],
+        requests: {},
+        sockets: [Object],
+        freeSockets: {},
+        keepAliveMsecs: 1000,
+        keepAlive: false,
+        maxSockets: Infinity,
+        maxFreeSockets: 256 },
+     _started: true,
+     href: 'http://localhost:8080//user/page/1',
+     req:
+      ClientRequest {
+        _events: [Object],
+        _eventsCount: 5,
+        _maxListeners: undefined,
+        output: [],
+        outputEncodings: [],
+        outputCallbacks: [],
+        outputSize: 0,
+        writable: true,
+        _last: true,
+        chunkedEncoding: false,
+        shouldKeepAlive: false,
+        useChunkedEncodingByDefault: false,
+        sendDate: false,
+        _removedConnection: false,
+        _removedContLen: false,
+        _removedTE: false,
+        _contentLength: 0,
+        _hasBody: true,
+        _trailer: '',
+        finished: true,
+        _headerSent: true,
+        socket: [Socket],
+        connection: [Socket],
+        _header:
+         'GET //user/page/1 HTTP/1.1\r\nhost: localhost:8080\r\naccept: application/json\r\nConnection: close\r\n\r\n',
+        _onPendingData: [Function: noopPendingOutput],
+        agent: [Agent],
+        socketPath: undefined,
+        timeout: undefined,
+        method: 'GET',
+        path: '//user/page/1',
+        _ended: true,
+        res: [Circular],
+        aborted: undefined,
+        timeoutCb: null,
+        upgradeOrConnect: false,
+        parser: null,
+        maxHeadersCount: null,
+        [Symbol(isCorked)]: false,
+        [Symbol(outHeadersKey)]: [Object] },
+     ntick: true,
+     response: [Circular],
+     originalHost: 'localhost:8080',
+     originalHostHeaderName: 'host',
+     responseContent: [Circular],
+     _destdata: true,
+     _ended: true,
+     _callbackCalled: true },
+  toJSON: [Function: responseToJSON],
+  caseless:
+   Caseless {
+     dict:
+      { 'content-type': 'application/json;charset=UTF-8',
+        'transfer-encoding': 'chunked',
+        date: 'Thu, 24 Oct 2019 21:56:57 GMT',
+        connection: 'close' } },
+  body:
+   { lastPage: null,
+     currentPage: null,
+     currentPageTotalItems: null,
+     totalItems: null,
+     users: [] } }
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[33m[nodemon] 1.19.1[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+Request a  http://localhost:8080//user
+{ lastPage: null,
+  currentPage: null,
+  currentPageTotalItems: null,
+  totalItems: null,
+  users: [] }
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./app.js`[39m
+Server is up on port 3003
+¨Desea terminar el trabajo por lotes (S/N)? 
