@@ -6,9 +6,10 @@ const userService = require('./src/services/UsuariosService')
 const port = process.env.PORT || 3003
 const viewsPath = path.join(__dirname , './public/views')
 const partialsPath = path.join(__dirname , './public/partials')
+const bodyParser = require('body-parser')
 
 const rutasGrupos = require('./src/routes/GruposRoutes')
-
+const rutasProyectos = require('./src/routes/ProyectosRoutes')
 //handlebars engine and views location
 app.engine('hbs', hbs.express4({
 	partialsDir: partialsPath,
@@ -19,10 +20,11 @@ app.engine('hbs', hbs.express4({
 
 //Setup static directory to serve
 app.use(express.static(path.join(__dirname , './public/assets') ) )
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
 /*CARGAR RUTAS */
-console.log(rutasGrupos.chargeRoutes(app));
-
+rutasGrupos(app);
+rutasProyectos(app);
 
 /* ROUTES FOR USERS SECION */
 app.get('' , (req, res) => {

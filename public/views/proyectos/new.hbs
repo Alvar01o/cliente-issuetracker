@@ -1,0 +1,17 @@
+<div class="container">
+    <ul class="nav justify-content-end">
+  <li class="nav-item">
+    <a class="nav-link active" href="/proyectos/new">Crear</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/proyectos/page/1">lista</a>
+  </li>
+
+</ul>
+
+<form class="form_well" action="/proyectos/save" method="post">
+    <input type="hidden" name="grupo_id" value="{{grupo_id}}">
+   <input type="text" name="nombre" class="form-control" placeholder="Nombre del Proyecto">
+   <input type="text" name="descripcion" class="form-control mt-3 m" placeholder="Descripcion del Proyecto">
+  <button type="submit" class="btn btn-primary">Guardar</button>
+</form>

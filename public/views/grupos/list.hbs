@@ -1,0 +1,22 @@
+<div class="container">
+    <ul class="nav justify-content-end">
+  <li class="nav-item">
+    <a class="nav-link active" href="/grupos/new">Crear</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/grupos/page/1">lista</a>
+  </li>
+
+</ul>
+
+</div>
+<div class="container row">
+{{#each data.grupos}}
+<div class="card" style="width: 18rem;margin: 20px;">
+  <div class="card-body">
+    <h5 class="card-title">{{nombre}}</h5>
+    <a href="/proyectos/page/{{id}}" class="btn btn-primary">ver proyectos</a>
+  </div>
+</div>
+{{/each}}
+</div>
