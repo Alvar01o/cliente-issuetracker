@@ -1,4 +1,7 @@
-Grupo = {
-    nombre:""
+const GrupoB  = class GruposB {
+    setNombre(nombre) {
+        this.nombre = nombre;
+    }
+  
 }
-module.exports = Grupo
+module.exports = GrupoB

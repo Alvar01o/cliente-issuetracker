@@ -1,14 +1,14 @@
 <div class="container">
     <ul class="nav justify-content-end">
   <li class="nav-item">
-    <a class="nav-link active" href="/grupos/new">Crear</a>
+    <a class="nav-link active" href="/issuetracker/grupos/new">Crear</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="/grupos/page/1">lista</a>
+    <a class="nav-link" href="/issuetracker/grupos/page/1">lista</a>
   </li>
 
 </ul>
-<form class="form_well" action="/grupos/save" method="post">
-   <input type="text" name="nombre" class="form-control" placeholder="Nombre del Grupo">
-  <button type="submit" class="btn btn-primary">Guardar</button>
+<form class="form_well" action="/issuetracker/grupos/save" method="post">
+   <input type="text" required name="nombre" class="form-control mb-2" placeholder="Nombre del Grupo">
+   <div class="clearfix">  <button type="submit" class="btn btn-primary">Guardar</button></div>
 </form>

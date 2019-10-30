@@ -1,28 +1,28 @@
 const request = require('request')
-const base = require("./BaseService.js");
-const User = require("../beans/UserB.js");
+const base = require("./BaseService");
 const url  = base.host + "user"
 
-const list   =   (page) => {
-    console.log("Request a  "+ url);
-    request({ url:url+"/page/"+page, json:true}, (error , response ) => {
-        console.log(response.body);
-        if (error) {
-
-        } else {
-
+const UsuariosService  = {
+    list : async function (page, callback) {
+        await request({ url:url+"/page/"+page, json:true}, (error , response ) => {
+            callback(error, response);
+        })
+    },
+    save : function (usuario , callback){
+        console.log(usuario);
+        let options = {
+            uri: url,
+            method:'post',
+            json:usuario
         }
-    
-    })
+        request(options ,  (error , response ) => {
+            callback(error, response);
+        })
+    }, 
+    getById : function(id , callback) {
+        request({ url:url+"/"+id, json:true}, (error , response ) => {
+            callback(error, response);
+        })
+    }
 }
-
-const create   =  (user) => {
-    
-    request.post(url, {form:{key:'value'}}, function(err,httpResponse,body){ 
-        console.log(body);
-    })
-}
-
-module.exports = {
-    list
-}
+module.exports = UsuariosService

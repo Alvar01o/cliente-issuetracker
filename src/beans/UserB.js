@@ -1,12 +1,16 @@
+const UserB  = class UserB {
+    setNombre(nombre) {
+        this.nombre = nombre;
+    }
+    setApellido(apellido) {
+        this.apellido = apellido;
+    }
+    setPass(pass){
+        this.pass = pass;
+    }
+    setEmail(email){
+        this.email = email;
+    }
+}
 
-let nombre;
-let apellido;
-let pass;
-let email;
-
-module.export = {
-    nombre,
-    apellido,
-    pass,
-    email
-} 
+module.exports = UserB

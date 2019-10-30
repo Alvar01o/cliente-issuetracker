@@ -1,0 +1,39 @@
+    <div class="container">
+    <ul class="nav justify-content-end">
+  <li class="nav-item">
+    <a class="nav-link active" href="/issuetracker/usuarios/new">Crear</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/issuetracker/usuarios/page/1">lista</a>
+  </li>
+</ul>
+
+
+<div class="container row">
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Email</th>
+      <th scope="col">Creacion</th>
+      <th scope="col">acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+{{#each data.users}}
+    <tr>
+      <th scope="row">{{id}}</th>
+      <td>{{nombre}}</td>
+      <td>{{apellido}}</td>
+      <td>{{email}}</td>
+      <td>{{creacion}}</td>
+      <td></td>
+    </tr>
+{{/each}}
+
+  </tbody>
+</table>
+
+</div>

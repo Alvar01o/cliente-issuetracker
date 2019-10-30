@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="col-md-12">
+        <div class="col-md-9 float-left"><h1>{{data.nombre}}</h1></div> <div class="col-md-3 float-right"><small>fue creado el: <b>{{data.creacion}}</b></small></div>
+    </div>
+    <div class="col-md-12">
+    <div class="clearfix float-left mt-5 mb-5"> <h3>Usuarios en el Grupo.</h3></div>        
+        {{#each data.users}}
+        {{/each}}
+    </div>
+
+
+</div>

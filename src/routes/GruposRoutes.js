@@ -3,13 +3,30 @@ const GruposService = require("../services/GruposService");
 const { body } = require('express-validator');
 const GruposB = require("../beans/GruposB")
 const GruposRoute  = function setRoutes(app) {
-    app.get('/grupos/page/:page' , (req, res) => {
-        let lista = GruposService.list(req.params.page , (error , response ) => {
+    app.get('/issuetracker/grupos/:id' , (req, res) => {
+        GruposService.getById(req.params.id , (error , response ) => {
             if (error){
 
             } else {
                 let body = response.body;
-                console.log(body)
+                console.log(body);
+                res.render('grupos/show', {
+                    title: 'Vista de Detalles de Grupo.',
+                    layout: 'layout', // render without using a layout template
+                    data: body
+                  }
+                )
+            }
+        });
+    })
+
+    
+    app.get('/issuetracker/grupos/page/:page' , (req, res) => {
+        GruposService.list(req.params.page , (error , response ) => {
+            if (error){
+
+            } else {
+                let body = response.body;
                 res.render('grupos/list', {
                     title: 'Lista de Grupos.',
                     layout: 'layout', // render without using a layout template
@@ -18,24 +35,35 @@ const GruposRoute  = function setRoutes(app) {
                 )
             }
         });
-
     })
+
     
-    app.post('/grupos/save' ,[body('nombre').not().isEmpty()], (req, res) => {
-        GruposB.nombre = req.body.nombre;
-        GruposService.save(GruposB , (error, response ) => {
+    app.post('/issuetracker/grupos/save' ,[body('nombre').not().isEmpty()], (req, res) => {
+        let gr = new GruposB();
+        gr.setNombre(req.body.nombre);
+        GruposService.save(gr , (error, response ) => {
             console.log(response.body);
             if (error) {
 
             } else {
-                res.redirect('/grupos/page/1')
+                res.redirect('/issuetracker/grupos/page/1')
             }
-
         });
-
     })
 
-    app.get('/grupos/new' , (req, res) => {
+    app.post('/issuetracker/grupos/adduser' ,[body('grupo_id').not().isEmpty(), body('user_id').not().isEmpty()], (req, res) => {
+        
+        GruposService.saveUser(req.body.grupo_id , req.body.user_id , (error, response ) => {
+            console.log(response.body);
+            if (error) {
+
+            } else {
+                res.redirect('/issuetracker/grupos/page/1')
+            }
+        });
+    })
+
+    app.get('/issuetracker/grupos/new' , (req, res) => {
         res.render('grupos/new', {
             title: 'Nuevo Grupo.',
             layout: 'layout' // render without using a layout template

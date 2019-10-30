@@ -1,10 +1,10 @@
 <div class="container">
     <ul class="nav justify-content-end">
   <li class="nav-item">
-    <a class="nav-link active" href="/grupos/new">Crear</a>
+    <a class="nav-link active" href="/issuetracker/grupos/new">Crear</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="/grupos/page/1">lista</a>
+    <a class="nav-link" href="/issuetracker/grupos/page/1">lista</a>
   </li>
 
 </ul>
@@ -12,11 +12,75 @@
 </div>
 <div class="container row">
 {{#each data.grupos}}
-<div class="card" style="width: 18rem;margin: 20px;">
+<div class="card" style="width: 24rem;margin: 54px;">
   <div class="card-body">
-    <h5 class="card-title">{{nombre}}</h5>
-    <a href="/proyectos/page/{{id}}" class="btn btn-primary">ver proyectos</a>
+  <div class="float-left">    <h5 class="card-title">{{nombre}}</h5> </div>
+
+  <div class="float-right">
+    <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     +
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" id="modal_info" href="#" data-toggle="modal" data-grupoid="{{id}}" data-grupon="{{nombre}}" data-target="#usuarioaGrupoModal">agregar usuario</a>
+      <a class="dropdown-item" id="modal_info" href="/issuetracker/grupos/{{id}}" >Ver Dealles</a>
+    </div>
+
+  </div>    
+  </div>
+    <br><br>
+<div class="clearfix">    <a href="/issuetrackers/proyectos/page/{{id}}" class="btn btn-primary">ver proyectos</a></div>
   </div>
 </div>
 {{/each}}
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="usuarioaGrupoModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="adduserform" action="/issuetracker/grupos/adduser" method="POST">
+          <input type="hidden" required id="grupo_id" value="" name="grupo_id">
+          <select class="custom-select" required name="user_id" id="usersSelect">
+          </select>          
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" id="saveuser" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function(){
+    $('#modal_info').on('click' , function(){
+      $('#usersSelect').html('');
+      $('#modalLabel').text('Agregar Usuario al Grupo : ' + $(this).data('grupon'))
+      $('#grupo_id').val($(this).data('grupoid'))
+      $.ajax({
+        url: "http://"+window.location.host+"/issuetracker/usuarios/page/1/json",
+      })
+        .done(function( data ) { //        <option value="1">One</option>
+          console.log(data.users);
+            data.users.forEach(function(e) {
+              $('#usersSelect').append('<option value="'+e.id+'">'+e.nombre+' '+e.apellido+'</option>')
+
+            });
+        });      
+    })
+    $("#saveuser").on('click', function() {
+      $("#adduserform").submit();
+    })
+  })
+</script>

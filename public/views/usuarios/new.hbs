@@ -1,0 +1,30 @@
+<div class="container">
+    <ul class="nav justify-content-end">
+  <li class="nav-item">
+    <a class="nav-link active" href="/issuetracker/usuarios/new">Crear</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/issuetracker/usuarios/page/1">lista</a>
+  </li>
+
+</ul>
+
+<form class="form_well" action="/issuetracker/usuarios/save" method="post">
+  <div class="form-group">
+    <label >Nombre</label>
+    <input type="text"  required  name="nombre" class="form-control"  placeholder="Ingrese nombre">
+  </div>
+  <div class="form-group">
+    <label >Apellido</label>
+    <input type="text" required   name="apellido" class="form-control"  placeholder="Ingrese apellido">
+  </div>
+  <div class="form-group">
+    <label >Contraseña</label>
+    <input type="password" required   name="pass" class="form-control"  placeholder="Ingrese contraseña">
+  </div>
+  <div class="form-group">
+    <label >Correo</label>
+    <input type="email" required  name="email" class="form-control"  placeholder="Ingrese Correo">
+  </div>
+  <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
