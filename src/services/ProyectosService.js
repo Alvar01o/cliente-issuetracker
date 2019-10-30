@@ -8,6 +8,11 @@ const ProyectosService  = {
             callback(error, response);
         })
     },
+    listByGrupo : async function (grupo_id, page, callback) {
+        await request({ url:url+"/getbygrupo/"+grupo_id+"/"+page, json:true}, (error , response ) => {
+            callback(error, response);
+        })
+    },    
     save : function (proyecto, grupo_id , callback){
         console.log("serv >> " + JSON.stringify(proyecto));
         let options = {

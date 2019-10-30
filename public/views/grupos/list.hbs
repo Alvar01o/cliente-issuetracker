@@ -24,13 +24,14 @@
 
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
       <a class="dropdown-item" id="modal_info" href="#" data-toggle="modal" data-grupoid="{{id}}" data-grupon="{{nombre}}" data-target="#usuarioaGrupoModal">agregar usuario</a>
-      <a class="dropdown-item" id="modal_info" href="/issuetracker/grupos/{{id}}" >Ver Dealles</a>
+      <a class="dropdown-item"  href="/issuetracker/grupos/{{id}}" >Ver Dealles</a>
+      <a class="dropdown-item" id="nuevo_proyecto" href="#" data-grupoid="{{id}}" data-grupon="{{nombre}}"  data-toggle="modal" data-target="#nuevoProyecto" >Nuevo Proyecto</a>
     </div>
 
   </div>    
   </div>
     <br><br>
-<div class="clearfix">    <a href="/issuetrackers/proyectos/page/{{id}}" class="btn btn-primary">ver proyectos</a></div>
+<div class="clearfix">    <a href="/issuetracker/proyectos/bygrupo/{{id}}/1" class="btn btn-primary">ver proyectos</a></div>
   </div>
 </div>
 {{/each}}
@@ -61,26 +62,66 @@
     </div>
   </div>
 </div>
+<!-- Modal -->
+<div class="modal fade" id="nuevoProyecto" tabindex="-1" role="dialog" aria-labelledby="modalt" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalt"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="addproyectoform" action="/issuetracker/proyectos/save" method="POST">
+          <input type="hidden" required id="grupo_id_pro" value="" name="grupo_id">
+          <div class="form-group">
+              <label >Nombre del Proyecto</label>
+              <input type="text"  required  name="nombre" class="form-control"  placeholder="Ingrese nombre">
+            </div>
+
+        <div class="form-group">
+            <label >Descripcion del Proyecto</label>
+            <input type="text"  required  name="descripcion" class="form-control"  placeholder="Ingrese Descripcion">
+          </div>
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" id="savepro" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
   $(document).ready(function(){
+    $('#nuevo_proyecto').on('click', function(){
+      $('#modalt').text('Agregar Proyecto para Grupo : ' +$(this).data('grupon') );
+      $('#grupo_id_pro').val($(this).data('grupoid'))
+    })
+
     $('#modal_info').on('click' , function(){
       $('#usersSelect').html('');
       $('#modalLabel').text('Agregar Usuario al Grupo : ' + $(this).data('grupon'))
       $('#grupo_id').val($(this).data('grupoid'))
       $.ajax({
         url: "http://"+window.location.host+"/issuetracker/usuarios/page/1/json",
-      })
-        .done(function( data ) { //        <option value="1">One</option>
+      }).done(function( data ) { //        <option value="1">One</option>
           console.log(data.users);
             data.users.forEach(function(e) {
               $('#usersSelect').append('<option value="'+e.id+'">'+e.nombre+' '+e.apellido+'</option>')
-
             });
         });      
     })
+
     $("#saveuser").on('click', function() {
       $("#adduserform").submit();
     })
+    $("#savepro").on('click', function() {
+      $("#addproyectoform").submit();
+    })
+//    /issuetracker/grupos/addproyecto/{{id}}
   })
 </script>

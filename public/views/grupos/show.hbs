@@ -4,8 +4,27 @@
     </div>
     <div class="col-md-12">
     <div class="clearfix float-left mt-5 mb-5"> <h3>Usuarios en el Grupo.</h3></div>        
-        {{#each data.users}}
-        {{/each}}
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each data.users}}
+    <tr>
+      <td>{{nombre}}</td>
+      <td>{{apellido}}</td>
+      <td>{{email}}</td>
+    </tr>            
+    {{/each}}
+  </tbody>
+</table>
+
     </div>
 
 

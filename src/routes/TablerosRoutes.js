@@ -4,7 +4,7 @@ const GruposService = require("../services/GruposService");
 const { body } = require('express-validator');
 const TablerosB = require("../beans/TablerosB")
 const TablerosRoute  = function setRoutes(app) {
-    app.get('/tableros/page/:page' , (req, res) => {
+    app.get('/issuetracker/tableros/page/:page' , (req, res) => {
         let lista = TablerosService.list(req.params.page , (error , response ) => {
             if (error){
 
@@ -22,7 +22,7 @@ const TablerosRoute  = function setRoutes(app) {
 
     })
     
-    app.post('/tableros/save' ,[body('nombre').not().isEmpty(), body('descripcion').not().isEmpty()], (req, res) => {
+    app.post('/issuetracker/tableros/save' ,[body('nombre').not().isEmpty(), body('descripcion').not().isEmpty()], (req, res) => {
         TablerosB.nombre = req.body.nombre;
         TablerosB.descripcion = req.body.descripcion;
         console.log( req.body);
@@ -31,14 +31,14 @@ const TablerosRoute  = function setRoutes(app) {
             if (error) {
 
             } else {
-                res.redirect('/tableros/page/1')
+                res.redirect('/issuetracker/tableros/page/1')
             }
 
         });
 
     })
 
-    app.get('/tableros/new/:grupo_id' , (req, res) => {
+    app.get('/issuetracker/tableros/new/:grupo_id' , (req, res) => {
         res.render('tableros/new', {
             title: 'Nuevo Proyecto.',
             layout: 'layout', // render without using a layout template
