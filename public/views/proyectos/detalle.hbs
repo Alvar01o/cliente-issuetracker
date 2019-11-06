@@ -1,0 +1,128 @@
+<div class="container">
+    <h3>{{data.nombre}}</h3>
+    <ul class="nav justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link active" href="#" id="crear_tablero" data-proid="{{data.id}}" data-toggle="modal"  data-propon="{{data.nombre}}" data-target="#tableroModal">Crear Tablero</a>
+        </li>
+    </ul>
+</div>
+
+<div class="container col-md-12" style="min-height: 90%;">
+{{#each data.tableros}}
+    <div class="col-md-3 float-left bg-white rounded mr-1" style="min-height: 800px;border-right: 1px solid #ccc;">
+        <div class="header_tablero row ">
+            <div class="col-md-8 float-left tab_name btn-info rounded " data-toggle="tooltip" data-placement="top" title="{{descripcion}}">{{nombre}} </div>
+            <div class="col-md-4 float-right tab_name rounded " data-toggle="tooltip" data-placement="top" title="{{descripcion}}">
+                  <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">accion
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item nueva_tarea" href="#" data-tableroid="{{id}}" data-toggle="modal" data-target="#tareasModal">Agregar Tarea</a>
+                <a class="dropdown-item" href="#" data-tableroid="{{id}}">Eliminar Tablero</a>
+                <a class="dropdown-item" href="#" data-tableroid="{{id}}">Editar</a>
+            </div>
+            </div>
+        </div>
+
+    </div>
+{{/each}}
+
+</div>
+<!-- Modal -->
+<div class="modal fade" id="tableroModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+        <form id="addtableroform" action="/issuetracker/tableros" method="POST">
+      <div class="modal-body">
+
+          <div class="form-group">
+              <label >Nombre del Tablero</label>
+              <input type="text" required  name="nombre" minlength="5" maxlength="80" class="form-control"  placeholder="Ingrese nombre del proyecto">
+            </div>
+          <div class="form-group">
+              <label >Descripcion del Tablero</label>
+              <input type="text" required  name="descripcion" size="150" class="form-control"  placeholder="Ingrese descripcion del tablero">
+            </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </div>
+        </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Tareas-->
+<div class="modal fade" id="tareasModal" tabindex="-1" role="dialog" aria-labelledby="tareasmodalL" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="tareasmodalL">Nueva Tarea</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+        <form id="addtableroform" action="/issuetracker/tarea/add" method="POST">
+      <div class="modal-body">
+          <input type="hidden" name="tablero_id" id="input_tablero_id" value="">
+          <div class="form-group">
+              <label >Nombre</label>
+              <input type="text" required  name="nombre" minlength="5" maxlength="80" class="form-control"  placeholder="Ingrese nombre de la Tarea">
+            </div>
+          <div class="form-group">
+              <label >Descripcion de la Tarea</label>
+              <input type="text" required  name="descripcion" size="150" class="form-control"  placeholder="Ingrese descripcion de la Tarea">
+            </div>
+          <div class="form-group">
+              <label >Prioridad</label>
+              <select class="custom-select" required name="prioridad" id="usersSelect">
+                <option value="1">ALTA</option>
+                <option value="2">MEDIA</option>
+                <option value="3">BAJA</option>
+              </select>
+            </div>
+          <div class="form-group">
+              <label >Estado</label>
+              <select class="custom-select" required name="estado" id="usersSelect">
+                <option value="pendiente">pendiente</option>
+                <option value="en-proceso">en proceso</option>
+                <option value="completo">completo</option>
+              </select>
+            </div>
+          <div class="form-group">
+              <label >limite</label>
+              <input type="text" required  name="limite" class="form-control"  placeholder="limite de entrega">
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </div>
+        </form>
+    </div>
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+      $("#crear_tablero").on('click' ,function(){
+          $('#modalLabel').text('Tablero para ' +  $(this).data("propon"))
+          $('#addtableroform').attr('action' , $('#addtableroform').attr('action')+"/"+ $(this).data("proid"))
+      })
+      $('#savetab').on('click', function(){
+          $('#addtableroform').submit();
+      })
+    $('.nueva_tarea').on('click', function(){
+        console.log($(this).data('tableroid'));
+        $('#input_tablero_id').val($(this).data('tableroid'))
+    })
+})
+
+</script>

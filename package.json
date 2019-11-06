@@ -19,11 +19,15 @@
   "homepage": "https://github.com/Alvar01o/cliente-issuetracker#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.4",
     "express": "^4.17.1",
     "express-hbs": "^2.1.2",
+    "express-session": "^1.17.0",
     "express-validator": "^6.2.0",
     "memcached": "^2.2.2",
     "path": "^0.12.7",
+    "properties-reader": "^0.3.1",
     "request": "^2.88.0"
   }
 }

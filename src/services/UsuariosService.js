@@ -8,6 +8,15 @@ const UsuariosService  = {
             callback(error, response);
         })
     },
+    delete: function(user_id , callback) {
+        let options = {
+            uri: url+"/"+user_id,
+            method:'delete',
+        }
+        request(options ,  (error , response ) => {
+            callback(error, response);
+        })        
+    } ,
     save : function (usuario , callback){
         console.log(usuario);
         let options = {

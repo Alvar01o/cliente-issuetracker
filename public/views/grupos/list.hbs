@@ -23,9 +23,10 @@
     </button>
 
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" id="modal_info" href="#" data-toggle="modal" data-grupoid="{{id}}" data-grupon="{{nombre}}" data-target="#usuarioaGrupoModal">agregar usuario</a>
       <a class="dropdown-item"  href="/issuetracker/grupos/{{id}}" >Ver Dealles</a>
-      <a class="dropdown-item" id="nuevo_proyecto" href="#" data-grupoid="{{id}}" data-grupon="{{nombre}}"  data-toggle="modal" data-target="#nuevoProyecto" >Nuevo Proyecto</a>
+      <a class="dropdown-item"  href="/issuetracker/grupos/remove/{{id}}" >Eliminar</a>
+      <a class="dropdown-item modal_user" id="modal_info" href="#" data-toggle="modal" data-grupoid="{{id}}" data-grupon="{{nombre}}" data-target="#usuarioaGrupoModal">agregar usuario</a>
+      <a class="dropdown-item nuevo_proyecto" id="nuevo_proyecto" href="#" data-grupoid="{{id}}" data-grupon="{{nombre}}"  data-toggle="modal" data-target="#nuevoProyecto" >Nuevo Proyecto</a>
     </div>
 
   </div>    
@@ -94,15 +95,15 @@
     </div>
   </div>
 </div>
-
+{{>pagination}}
 <script>
   $(document).ready(function(){
-    $('#nuevo_proyecto').on('click', function(){
+    $('.nuevo_proyecto').on('click', function(){
       $('#modalt').text('Agregar Proyecto para Grupo : ' +$(this).data('grupon') );
       $('#grupo_id_pro').val($(this).data('grupoid'))
     })
 
-    $('#modal_info').on('click' , function(){
+    $('.modal_user').on('click' , function(){
       $('#usersSelect').html('');
       $('#modalLabel').text('Agregar Usuario al Grupo : ' + $(this).data('grupon'))
       $('#grupo_id').val($(this).data('grupoid'))

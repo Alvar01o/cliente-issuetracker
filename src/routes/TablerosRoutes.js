@@ -22,16 +22,17 @@ const TablerosRoute  = function setRoutes(app) {
 
     })
     
-    app.post('/issuetracker/tableros/save' ,[body('nombre').not().isEmpty(), body('descripcion').not().isEmpty()], (req, res) => {
-        TablerosB.nombre = req.body.nombre;
-        TablerosB.descripcion = req.body.descripcion;
-        console.log( req.body);
-        TablerosService.save(TablerosB , req.body.grupo_id, (error, response ) => {
-            console.log(response.body);
+    app.post('/issuetracker/tableros/:proyecto_id' ,[body('nombre').not().isEmpty(), body('descripcion').not().isEmpty()], (req, res) => {
+        let tablero  = new TablerosB()
+        tablero.setNombre(req.body.nombre);
+        tablero.setDescripcion(req.body.descripcion);
+        console.log(req.body);
+        TablerosService.save(tablero , req.params.proyecto_id, (error, response ) => {
+
             if (error) {
 
             } else {
-                res.redirect('/issuetracker/tableros/page/1')
+                res.redirect('/issuetracker/proyectos/'+req.params.proyecto_id)
             }
 
         });

@@ -9,3 +9,8 @@
 .sidebar {
     
 }
+.tab_name {
+    padding-top: 10px;
+    min-height: 50px;
+    background-color: #ccc;
+}

@@ -11,10 +11,56 @@
 {{#each data.proyectos}}
 <div class="card" style="width: 18rem;margin: 20px;">
   <div class="card-body">
-    <h5 class="card-title">{{nombre}}</h5>
-    <div class="clearfix"><span>{{descripcion}}</span></div>
-    <a href="/issuetracker/tableros/page/{{id}}" class="btn btn-primary">Ver tableros</a>
+    <div class="mb-5">
+   <div class="float-left">
+   <h5 class="card-title">{{nombre}}</h5>     
+   </div>
+  <div class="float-right">
+    <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     +
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <!--<a class="dropdown-item" id="modal_info" href="#" data-toggle="modal" data-proid="{{id}}" data-propon="{{nombre}}" data-target="#protabModal">Agregar Tablero</a>-->
+    </div>
+  </div>    
+  </div> 
+    </div>
+    <div class="clearfix mb-3"><span>{{descripcion}}</span></div>
+    <a href="/issuetracker/proyectos/{{id}}" class="btn btn-primary">Tableros</a>
   </div>
 </div>
 {{/each}}
 </div>
+<!-- Modal -->
+<div class="modal fade" id="protabModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="adduserform" action="/issuetracker/grupos/adduser" method="POST">
+
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" id="saveuser" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+  $('#modal_info').on('click' , function(){
+    $('#modalLabel').text("")
+  })
+})
+
+</script>

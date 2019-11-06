@@ -1,5 +1,7 @@
 $(document).ready(function(){
-    /*$('a.nav-link.grupos-menu').click(function () {
-        console.log('clicked');
-    })*/
+    if($('.toast-body').text() !== "") {
+        setTimeout( function(){
+            $('.toast').toast('show');
+        },1500);
+    }
 })

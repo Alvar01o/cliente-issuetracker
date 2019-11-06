@@ -28,6 +28,15 @@ const GruposService  = {
             callback(error, response);
         })
     }, 
+    delete: function(grupo_id , callback) {
+        let options = {
+            uri: url+"/"+grupo_id,
+            method:'delete',
+        }
+        request(options ,  (error , response ) => {
+            callback(error, response);
+        })        
+    } ,
     getById : function(id , callback) {
         request({ url:url+"/"+id, json:true}, (error , response ) => {
             callback(error, response);

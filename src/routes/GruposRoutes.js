@@ -3,6 +3,14 @@ const GruposService = require("../services/GruposService");
 const { body } = require('express-validator');
 const GruposB = require("../beans/GruposB")
 const GruposRoute  = function setRoutes(app) {
+    
+    app.get('/issuetracker/grupos/new' , (req, res) => {
+        res.render('grupos/new', {
+            title: 'Nuevo Grupo.',
+            layout: 'layout' // render without using a layout template
+          })
+    })
+    
     app.get('/issuetracker/grupos/:id' , (req, res) => {
         GruposService.getById(req.params.id , (error , response ) => {
             if (error){
@@ -27,10 +35,14 @@ const GruposRoute  = function setRoutes(app) {
 
             } else {
                 let body = response.body;
+                let pag=1;                
                 res.render('grupos/list', {
                     title: 'Lista de Grupos.',
                     layout: 'layout', // render without using a layout template
-                    data: body
+                    data: body,
+                    message:req.flash('message'),
+                    url:'/issuetracker/grupos/page/',
+                    pagination: Array.from({length: body.lastPage}, () => '/issuetracker/grupos/page/'+ pag++ )
                   }
                 )
             }
@@ -63,13 +75,13 @@ const GruposRoute  = function setRoutes(app) {
         });
     })
 
-    app.get('/issuetracker/grupos/new' , (req, res) => {
-        res.render('grupos/new', {
-            title: 'Nuevo Grupo.',
-            layout: 'layout' // render without using a layout template
-          })
+    app.get('/issuetracker/grupos/remove/:id' , (req, res) => {   
+        GruposService.delete(req.params.id , (error , response) => {
+            let b = JSON.parse(response.body);
+            req.flash('message', b.message);
+            res.redirect('/issuetracker/grupos/page/1')
+        })
     })
-
 
 }
 

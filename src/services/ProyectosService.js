@@ -8,6 +8,11 @@ const ProyectosService  = {
             callback(error, response);
         })
     },
+    listById : async function (proyecto_id, callback) {
+        await request({ url:url+"/"+proyecto_id, json:true}, (error , response ) => {
+            callback(error, response);
+        })
+    },
     listByGrupo : async function (grupo_id, page, callback) {
         await request({ url:url+"/getbygrupo/"+grupo_id+"/"+page, json:true}, (error , response ) => {
             callback(error, response);

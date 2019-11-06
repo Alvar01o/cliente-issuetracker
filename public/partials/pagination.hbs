@@ -1,0 +1,27 @@
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+        <li class="page-item"><a class="page-link prev" href="#">Previous</a></li>
+    {{#each pagination as |value key|}}
+        <li class="page-item"><a class="page-link " href="{{value}}">{{key}}</a></li>
+    {{/each}}
+        <li class="page-item"><a class="page-link next" href="#">Next</a></li>
+  </ul>
+</nav>
+
+<script>
+    let currentPage = parseInt({{data.currentPage}} + 1);
+    let url = '{{url}}' ;
+    if (isNaN(currentPage) ) {
+        currentPage = 1;
+    }
+    $(document).ready(function(){
+        $('a.prev').attr('href', url+""+(currentPage-1));
+        $('a.next').attr('href', url+""+(currentPage+1));
+        $('.page-item a').each(function(){
+            if(!isNaN($(this).text())){
+                $(this).text(parseInt($(this).text())+1)
+            }
+            console.log($(this).text());
+        })
+    })
+</script>

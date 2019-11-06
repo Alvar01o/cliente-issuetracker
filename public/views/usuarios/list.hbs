@@ -8,7 +8,6 @@
   </li>
 </ul>
 
-
 <div class="container row">
 <table class="table">
   <thead class="thead-dark">
@@ -29,11 +28,12 @@
       <td>{{apellido}}</td>
       <td>{{email}}</td>
       <td>{{creacion}}</td>
-      <td></td>
+      <td class="remove" ><a href="/issuetracker/usuarios/remove/{{id}}"><i class="fas fa-trash"></i></a></td>
     </tr>
 {{/each}}
 
+
   </tbody>
 </table>
-
+{{>pagination}}
 </div>

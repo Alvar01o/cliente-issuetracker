@@ -8,10 +8,10 @@ const tablerosService  = {
             callback(error, response);
         })
     },
-    save : function (tablero, grupo_id , callback){
+    save : function (tablero, tablero_id , callback){
         console.log("serv >> " + JSON.stringify(tablero));
         let options = {
-            uri: url + "/" + grupo_id,
+            uri: url + "/" + tablero_id,
             method:'post',
             json:tablero
         }
