@@ -1,11 +1,11 @@
 const request = require('request')
 const base = require("./BaseService");
-const url  = base.host + "tablero"
+const url  = base.config.get('host') + 'tablero'
 
 const tablerosService  = {
     list : async function (page, callback) {
         await request({ url:url+"/page/"+page, json:true}, (error , response ) => {
-            callback(error, response);
+            base.utils.checkBodyAndCache(error, response, callback , {store:true , type:'tableros' , base:base})
         })
     },
     save : function (tablero, tablero_id , callback){

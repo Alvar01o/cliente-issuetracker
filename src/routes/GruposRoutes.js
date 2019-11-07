@@ -16,8 +16,7 @@ const GruposRoute  = function setRoutes(app) {
             if (error){
 
             } else {
-                let body = response.body;
-                console.log(body);
+                let body = response;
                 res.render('grupos/show', {
                     title: 'Vista de Detalles de Grupo.',
                     layout: 'layout', // render without using a layout template
@@ -54,7 +53,6 @@ const GruposRoute  = function setRoutes(app) {
         let gr = new GruposB();
         gr.setNombre(req.body.nombre);
         GruposService.save(gr , (error, response ) => {
-            console.log(response.body);
             if (error) {
 
             } else {
@@ -66,7 +64,6 @@ const GruposRoute  = function setRoutes(app) {
     app.post('/issuetracker/grupos/adduser' ,[body('grupo_id').not().isEmpty(), body('user_id').not().isEmpty()], (req, res) => {
         
         GruposService.saveUser(req.body.grupo_id , req.body.user_id , (error, response ) => {
-            console.log(response.body);
             if (error) {
 
             } else {

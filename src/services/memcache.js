@@ -1,11 +1,10 @@
-var	nMemcached = require( '../' ),
-	memcached;
+const PropertiesReader = require('properties-reader');
+const config = PropertiesReader('src/config/config.properties');
 
-	// Set a global configuration:
-	nMemcached.config.poolSize = 25;
-	
-	memcached = new nMemcached( "10.211.55.5:11211" );
-	// each time a server fails
+var	nMemcached = require('memcached');
+	memcached = new nMemcached(config.get("cache_server") , {poolSize:25 , retries:10 , failures:20});
+//	console.log(nMemcached); 
+	// each time a server fails 
 	memcached.on( "issue", function( issue ){
 		console.log( "Issue occured on server " + issue.server + ", " + issue.retries  + " attempts left untill failure" );
 	});
@@ -18,7 +17,7 @@ var	nMemcached = require( '../' ),
 		console.log( "reconnecting to server: " + issue.server + " failed!" );
 	})
 
-
+/*
 	memcached.items( function( err, result ){
 		if( err ) console.error( err );
 		
@@ -38,3 +37,5 @@ var	nMemcached = require( '../' ),
 			})
 		})
 	});
+*/
+	module.exports = memcached;

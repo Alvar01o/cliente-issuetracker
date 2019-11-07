@@ -5,7 +5,7 @@ const { body } = require('express-validator');
 const ProyectosB = require("../beans/ProyectosB")
 const ProyectosRoute  = function setRoutes(app) {
     app.get('/issuetracker/proyectos/:id' , (req, res) => {
-        ProyectosService.listById(req.params.id , (error , response ) => {
+        ProyectosService.getById(req.params.id , (error , response ) => {
             if (error){
 
             } else {

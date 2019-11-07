@@ -28,7 +28,6 @@ const UsuariosRoute  = function setRoutes(app) {
 
         } else {
             let body = response.body;
-            console.log(body)
             res.send(body)
         }
     });
@@ -41,9 +40,8 @@ const UsuariosRoute  = function setRoutes(app) {
         usuario.setPass(req.body.pass)
         usuario.setEmail(req.body.email)
         UsuariosService.save(usuario , (error, response ) => {
-            console.log(response.body);
             if (error) {
-
+                req.flash('message', "Error al guardar el usuario.");
             } else {
                 res.redirect('/issuetracker/usuarios/page/1')
             }
