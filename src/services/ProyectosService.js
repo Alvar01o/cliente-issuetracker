@@ -9,9 +9,17 @@ const ProyectosService  = {
         })
     },
     getById :  function (proyecto_id, callback) {
-         request({ url:url+"/"+proyecto_id, json:true}, (error , response ) => {
-            callback(error, response);
-        })
+
+        memcached.get(base.config.get("cache_key") + "_proyectos_"+id, function (err, data) {
+            if(err){
+                request({ url:url+"/"+proyecto_id, json:true}, (error , response ) => {
+                    callback(error, response);
+                })
+            } else {
+                callback(err, data);
+            }}
+        );
+
     },
     listByGrupo :  function (grupo_id, page, callback) {
          request({ url:url+"/getbygrupo/"+grupo_id+"/"+page, json:true}, (error , response ) => {
@@ -26,7 +34,9 @@ const ProyectosService  = {
         }
 
         request(options ,  (error , response ) => {
-            callback(error, response);
+            base.cache.set(base.config.get("cache_key") + "_proyectos_" + response.body.id , proyecto, base.config.get("cache_timeout") , function(err){
+                callback(error, response);
+            });
         })
     }
 }

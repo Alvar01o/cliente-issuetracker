@@ -3,8 +3,8 @@ const base = require("./BaseService");
 const url  = base.config.get('host') + 'grupo'
 const GruposB = require("../beans/GruposB")
 const GruposService  = {
-    list : async function (page, callback) {
-        await request({ url:url+"/page/"+page, json:true}, (error , response ) => {
+    list :  function (page, callback) {
+         request({ url:url+"/page/"+page, json:true}, (error , response ) => {
             base.utils.checkBodyAndCache(error, response, callback , {store:true , type:'grupos' , base:base})
         })
     },
