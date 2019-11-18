@@ -26,7 +26,7 @@ const TablerosRoute  = function setRoutes(app) {
         let tablero  = new TablerosB()
         tablero.setNombre(req.body.nombre);
         tablero.setDescripcion(req.body.descripcion);
-        console.log(req.body);
+
         TablerosService.save(tablero , req.params.proyecto_id, (error, response ) => {
 
             if (error) {
@@ -36,7 +36,6 @@ const TablerosRoute  = function setRoutes(app) {
             }
 
         });
-
     })
 
     app.get('/issuetracker/tableros/new/:grupo_id' , (req, res) => {

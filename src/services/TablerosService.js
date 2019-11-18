@@ -16,6 +16,17 @@ const tablerosService  = {
         }
         request(options ,  (error , response) => {
             base.cache.set(base.config.get("cache_key") + "_tableros_" + response.body.id , tablero, base.config.get("cache_timeout") , function(err){
+
+                base.cache.gets(base.config.get("cache_key") + "_proyectos_" + proyecto_id, function (err, data) {
+                    let proyecto = data[base.config.get("cache_key") + "_proyectos_" + proyecto_id];
+                    tablero = JSON.parse(response.body);
+                    proyecto.tableros = new Array(proyecto.tableros);
+                    proyecto.tableros.push(tablero);
+                    base.cache.cas(base.config.get("cache_key") + "_proyectos_" + proyecto_id,proyecto , data.cas, base.config.get("cache_timeout"), function (err , result ) {
+                        callback(error, result);
+                    });
+                });
+    
                 callback(error, response);
             });
         })

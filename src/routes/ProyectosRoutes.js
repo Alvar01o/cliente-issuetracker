@@ -9,7 +9,7 @@ const ProyectosRoute  = function setRoutes(app) {
             if (error){
 
             } else {
-                let body = response.body;
+                let body = response;
                 console.log(body)
                 res.render('proyectos/detalle', {
                     title: 'Lista de Proyectos.',
@@ -62,6 +62,7 @@ const ProyectosRoute  = function setRoutes(app) {
             grupo_id : req.params.grupo_id
           })
     })
+    
     app.get('/issuetracker/proyectos/bygrupo/:grupo_id/:page' , (req, res) => {
         let lista = ProyectosService.listByGrupo(req.params.grupo_id,req.params.page , (error , response ) => {
             if (error){

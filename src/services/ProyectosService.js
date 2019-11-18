@@ -10,10 +10,10 @@ const ProyectosService  = {
     },
     getById :  function (proyecto_id, callback) {
 
-        memcached.get(base.config.get("cache_key") + "_proyectos_"+id, function (err, data) {
+        memcached.get(base.config.get("cache_key") + "_proyectos_"+proyecto_id, function (err, data) {
             if(err){
                 request({ url:url+"/"+proyecto_id, json:true}, (error , response ) => {
-                    callback(error, response);
+                    callback(error, response.body);
                 })
             } else {
                 callback(err, data);
@@ -34,7 +34,7 @@ const ProyectosService  = {
         }
 
         request(options ,  (error , response ) => {
-            base.cache.set(base.config.get("cache_key") + "_proyectos_" + response.body.id , proyecto, base.config.get("cache_timeout") , function(err){
+            base.cache.set(base.config.get("cache_key") + "_proyectos_" + response.body.id , response.body, base.config.get("cache_timeout") , function(err){
                 callback(error, response);
             });
         })

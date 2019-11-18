@@ -2,6 +2,7 @@
 const GruposService = require("../services/GruposService");
 const { body } = require('express-validator');
 const GruposB = require("../beans/GruposB")
+
 const GruposRoute  = function setRoutes(app) {
     
     app.get('/issuetracker/grupos/new' , (req, res) => {
@@ -29,10 +30,12 @@ const GruposRoute  = function setRoutes(app) {
 
     
     app.get('/issuetracker/grupos/page/:page' , (req, res) => {
-        GruposService.list(req.params.page , (error , response ) => {
-            if (error){
 
+        GruposService.list(req.params.page ,req , res, (error , response ) => { 
+            if (error){
+                console.log(error);
             } else {
+                console.log(response.body)
                 let body = response.body;
                 let pag=1;                
                 res.render('grupos/list', {

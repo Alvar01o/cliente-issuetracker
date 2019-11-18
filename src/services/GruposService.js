@@ -1,12 +1,14 @@
 const request = require('request')
 const base = require("./BaseService");
 const url  = base.config.get('host') + 'grupo'
-const GruposB = require("../beans/GruposB")
+const RequestMiddleware =  require("../middlewares/requestmiddleware");
+let req = undefined;
 const GruposService  = {
-    list :  function (page, callback) {
-         request({ url:url+"/page/"+page, json:true}, (error , response ) => {
+    list :  function (page, req, res, callback) {
+        RequestMiddleware.checkCredentials(req,res);
+        request( { url:url+"/page/"+page , headers: {"Authorization":req.session.auth.basic} , json:true}, (error , response ) => {
             base.utils.checkBodyAndCache(error, response, callback , {store:true , type:'grupos' , base:base})
-        })
+        });
     },
     save : function (grupo , callback){
         let options = {
@@ -27,14 +29,13 @@ const GruposService  = {
         }
         request(options ,  (error , response ) => {
             base.cache.gets(base.config.get("cache_key") + "_grupos_" + grupo_id, function (err, data) {
-                let grupo = data[base.config.get("cache_key") + "_grupos_" + grupo_id];
-                grupo = JSON.parse(response.body);
+                let grupo = JSON.parse(response.body);
                 base.cache.cas(base.config.get("cache_key") + "_grupos_" + grupo_id,grupo , data.cas, base.config.get("cache_timeout"), function (err , result ) {
                     callback(error, result);
                 });
             });
         })
-    },  
+    },
     delete: function(grupo_id , callback) {
         let options = {
             uri: url+"/"+grupo_id,
