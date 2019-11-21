@@ -5,7 +5,7 @@ const { body } = require('express-validator');
 const TareasB = require("../beans/TareasB")
 const TareasRoute  = function setRoutes(app) {
     app.get('/issuetracker/tareas/page/:page' , (req, res) => {
-        TareasService.list(req.params.page , (error , response ) => {
+        TareasService.list(req.params.page, req, res, (error , response ) => {
             if (error){
 
             } else {
@@ -22,23 +22,15 @@ const TareasRoute  = function setRoutes(app) {
 
     })
     
-    app.post('/issuetracker/tarea/add' ,[body('nombre').not().isEmpty(), body('descripcion').not().isEmpty()], (req, res) => {
+    app.post('/issuetracker/tarea/add', [body('nombre').not().isEmpty(), body('descripcion').not().isEmpty()], (req, res) => {
         let tarea  = new TareasB()
         tarea.setNombre(req.body.nombre);
-        tarea.setDescripcion(req.body.nombre);
+        tarea.setDescripcion(req.body.descripcion);
         tarea.setEstado(req.body.estado);
         tarea.setPrioridad(req.body.prioridad);
         tarea.setLimite(req.body.limite);
-        TareasService.save(tarea , req.body.tablero_id, (error, response ) => {
-            request('http://localhost:8080/tablero/page/1' ,  (err , respon ) => {
-                if (error || err) {
-                } else {
-                    console.log(respon.body);
-                }
-
-            })
-
-
+        TareasService.save(tarea , req.body.tablero_id,  req, res, (error, response ) => {
+            res.redirect(req.get('referer'));
         });
 
     })

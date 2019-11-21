@@ -4,7 +4,7 @@ const { body } = require('express-validator');
 const UserB = require("../beans/UserB")
 const UsuariosRoute  = function setRoutes(app) {
     app.get('/issuetracker/usuarios/page/:page' , (req, res) => {
-        UsuariosService.list(req.params.page , (error , response ) => {
+        UsuariosService.list(req.params.page , req,res,(error , response ) => {
             if (error){
 
             } else {
@@ -23,7 +23,7 @@ const UsuariosRoute  = function setRoutes(app) {
     })
 
     app.get('/issuetracker/usuarios/page/:page/json' , (req, res) => {
-        UsuariosService.list(req.params.page , (error , response ) => {
+        UsuariosService.list(req.params.page , req,res,(error , response ) => {
         if (error){
 
         } else {
@@ -39,7 +39,7 @@ const UsuariosRoute  = function setRoutes(app) {
         usuario.setApellido(req.body.apellido)
         usuario.setPass(req.body.pass)
         usuario.setEmail(req.body.email)
-        UsuariosService.save(usuario , (error, response ) => {
+        UsuariosService.save(usuario , req,res,(error, response ) => {
             if (error) {
                 req.flash('message', "Error al guardar el usuario.");
             } else {
@@ -58,7 +58,7 @@ const UsuariosRoute  = function setRoutes(app) {
     })
 
     app.get('/issuetracker/usuarios/remove/:id' , (req, res) => {   
-        UsuariosService.delete(req.params.id , (error , response) => {
+        UsuariosService.delete(req.params.id ,req,res, (error , response) => {
             let b = JSON.parse(response.body);
             req.flash('message', b.message);
             res.redirect('/issuetracker/usuarios/page/1')

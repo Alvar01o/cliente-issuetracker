@@ -1,17 +1,16 @@
 
 const ProyectosService = require("../services/ProyectosService");
-const GruposService = require("../services/GruposService");
 const { body } = require('express-validator');
 const ProyectosB = require("../beans/ProyectosB")
 const ProyectosRoute  = function setRoutes(app) {
     app.get('/issuetracker/proyectos/:id' , (req, res) => {
-        ProyectosService.getById(req.params.id , (error , response ) => {
+        ProyectosService.getById(req.params.id ,  req, res, (error , response ) => {
             if (error){
 
             } else {
                 let body = response;
                 console.log(body)
-                res.render('proyectos/detalle', {
+                res.render('proyectos/detalle', { 
                     title: 'Lista de Proyectos.',
                     layout: 'layout', // render without using a layout template
                     data: body
@@ -22,7 +21,7 @@ const ProyectosRoute  = function setRoutes(app) {
     })
 
     app.get('/issuetracker/proyectos/page/:page' , (req, res) => {
-        ProyectosService.list(req.params.page , (error , response ) => {
+        ProyectosService.list(req.params.page , req, res, (error , response ) => {
             if (error){
 
             } else {
@@ -43,7 +42,7 @@ const ProyectosRoute  = function setRoutes(app) {
         pro.setDescripcion(req.body.descripcion)
         pro.setNombre(req.body.nombre)
  
-        ProyectosService.save(pro , req.body.grupo_id, (error, response ) => {
+        ProyectosService.save(pro , req.body.grupo_id, req, res,(error, response ) => {
             console.log(response.body);
             if (error) {
 
@@ -64,7 +63,7 @@ const ProyectosRoute  = function setRoutes(app) {
     })
     
     app.get('/issuetracker/proyectos/bygrupo/:grupo_id/:page' , (req, res) => {
-        let lista = ProyectosService.listByGrupo(req.params.grupo_id,req.params.page , (error , response ) => {
+        let lista = ProyectosService.listByGrupo(req.params.grupo_id,req.params.page ,req, res, (error , response ) => {
             if (error){
 
             } else {

@@ -22,6 +22,60 @@
             </div>
             </div>
         </div>
+        <div class="row">
+            {{#each tareas}}
+              <div class = "tareaDiv" data-tareaid="{{id}}">
+                <small>Created: {{creacion}}</small>
+                <div class="descripcion"><b>{{nombre}}</b> </div>
+                <div class="clearfix">
+                  <p class ="text-center">{{descripcion}}</p></div>
+                <div> 
+                  <div class="col-md-12 ">
+                    <div class="float-left">
+                      <p>Prioridad:</p>
+                    </div>
+                    {{#ifeq prioridad 1}}
+                      <div class="col-md-8 alert alert-danger float-right" role="alert">
+                          ALTA
+                      </div> 
+                    {{/ifeq}}
+                    {{#ifeq prioridad 2}}
+                      <div class="col-md-8 alert alert-warning float-right" role="alert">
+                          MEDIA
+                      </div> 
+                    {{/ifeq}}
+                    {{#ifeq prioridad 3}}
+                      <div class="col-md-8 alert alert-success float-right" role="alert">
+                          BAJA
+                      </div> 
+                    {{/ifeq}}
+                  </div> 
+                  <div class="clearfix"></div>
+                  <div class="col-md-12 ">
+                    <div class="float-left">
+                      <p>Estado:</p>
+                    </div>
+
+                    {{#ifeq estado "pendiente"}}
+                      <div class="col-md-8  alert alert-dark float-right" role="alert">
+                          {{estado}}
+                      </div> 
+                    {{/ifeq}}
+                    {{#ifeq estado "en proceso"}}
+                      <div class="col-md-8  alert alert-warning float-right" role="alert">
+                          {{estado}}
+                      </div> 
+                    {{/ifeq}}
+                    {{#ifeq estado "completo"}}
+                      <div class="col-md-8 alert alert-success float-right" role="alert">
+                          {{estado}}
+                      </div> 
+                    {{/ifeq}}
+                    </div>
+                </div>
+              </div>
+            {{/each}}            
+        </div>
 
     </div>
 {{/each}}
@@ -42,7 +96,7 @@
 
           <div class="form-group">
               <label >Nombre del Tablero</label>
-              <input type="text" required  name="nombre" minlength="5" maxlength="80" class="form-control"  placeholder="Ingrese nombre del proyecto">
+              <input type="text" required  name="nombre" minlength="5" maxlength="80" class="form-control"  placeholder="Ingrese nombre del tablero">
             </div>
           <div class="form-group">
               <label >Descripcion del Tablero</label>

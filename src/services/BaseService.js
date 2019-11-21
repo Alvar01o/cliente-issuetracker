@@ -4,8 +4,6 @@ const cache  =  require("./memcache");
 
 const utils  = {
     checkBodyAndCache(error ,response , callback ,options) {
-        console.log(error);
-        console.log(response);
         if(typeof response == 'undefined') {
             callback(error ,{"message":"Error al recibir pedido"});
         }
@@ -18,8 +16,9 @@ const utils  = {
             if(response.body[options.type] == undefined) {
                 console.log('No se especifico tipo de cache');
             } else {
-                response.body[options.type].forEach(function(grupo) {
-                    options.base.cache.add(options.base.config.get("cache_key") + "_"+options.type+"_"+ grupo.id , grupo, options.base.config.get("cache_timeout") , function(err){
+                response.body[options.type].forEach(function(algo) {
+                    console.log("STORING " + JSON.stringify(algo));
+                    options.base.cache.add(options.base.config.get("cache_key") + "_"+options.type+"_"+ algo.id , algo, options.base.config.get("cache_timeout") , function(err){
                     });
                 })    
             }

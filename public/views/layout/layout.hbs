@@ -2,13 +2,22 @@
 <html>
 	{{>header}}
 <body style="">
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar  navbar-dark bg-primary">
   <a class="navbar-brand" href="#">IssueTracker</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-  </div>
+
+
+<div class="nav-item dropdown my-lg-0 my-2 col-md-2">
+        <a class="nav-link dropdown-toggle" href="#" style="color: white;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="far fa-meh-blank"></i>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Editar</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/issuetracker/logout">Salir</a>
+
+        </div>
+      </div>
+
 </nav>
 {{>toasts}}
 	<div class="container row shadow-lg p-3 mb-5 bg-light rounded principal_container">

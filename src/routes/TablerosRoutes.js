@@ -5,7 +5,7 @@ const { body } = require('express-validator');
 const TablerosB = require("../beans/TablerosB")
 const TablerosRoute  = function setRoutes(app) {
     app.get('/issuetracker/tableros/page/:page' , (req, res) => {
-        let lista = TablerosService.list(req.params.page , (error , response ) => {
+        TablerosService.list(req.params.page , req,res,(error , response ) => {
             if (error){
 
             } else {
@@ -27,7 +27,7 @@ const TablerosRoute  = function setRoutes(app) {
         tablero.setNombre(req.body.nombre);
         tablero.setDescripcion(req.body.descripcion);
 
-        TablerosService.save(tablero , req.params.proyecto_id, (error, response ) => {
+        TablerosService.save(tablero , req.params.proyecto_id, req, res, (error, response ) => {
 
             if (error) {
 

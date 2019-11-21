@@ -2,19 +2,26 @@ const request = require('request')
 const base = require("./BaseService");
 const url  = base.config.get('host') + 'grupo'
 const RequestMiddleware =  require("../middlewares/requestmiddleware");
-let req = undefined;
+
 const GruposService  = {
     list :  function (page, req, res, callback) {
         RequestMiddleware.checkCredentials(req,res);
         request( { url:url+"/page/"+page , headers: {"Authorization":req.session.auth.basic} , json:true}, (error , response ) => {
-            base.utils.checkBodyAndCache(error, response, callback , {store:true , type:'grupos' , base:base})
+            if(response.body == undefined) {
+
+            } else {
+                base.utils.checkBodyAndCache(error, response, callback , {store:true , type:'grupos' , base:base})
+            }
+
         });
     },
-    save : function (grupo , callback){
+    save : function (grupo ,req, res, callback){
+        RequestMiddleware.checkCredentials(req,res);
         let options = {
             uri: url,
             method:'post',
-            json:grupo
+            json:grupo,
+            headers: {"Authorization":req.session.auth.basic}
         }
         request(options ,  (error , response) => {
             base.cache.set(base.config.get("cache_key") + "_grupos_" + response.body.id , grupo, base.config.get("cache_timeout") , function(err){
@@ -22,10 +29,12 @@ const GruposService  = {
             });
         })
     }, 
-    saveUser : function (grupo_id , user_id , callback){
+    saveUser : function (grupo_id , user_id , req, res, callback){
+        RequestMiddleware.checkCredentials(req,res);
         let options = {
             uri: url+"/adduser/"+grupo_id+"/"+user_id,
-            method:'post'
+            method:'post',
+            headers: {"Authorization":req.session.auth.basic}
         }
         request(options ,  (error , response ) => {
             base.cache.gets(base.config.get("cache_key") + "_grupos_" + grupo_id, function (err, data) {
@@ -36,19 +45,22 @@ const GruposService  = {
             });
         })
     },
-    delete: function(grupo_id , callback) {
+    delete: function(grupo_id ,req, res, callback) {
+        RequestMiddleware.checkCredentials(req,res);
         let options = {
-            uri: url+"/"+grupo_id,
+            uri: url+"/"+grupo_id, 
             method:'delete',
+            headers: {"Authorization":req.session.auth.basic}            
         }
         request(options ,  (error , response ) => {
             callback(error, response);
-        })        
+        })
     } ,
-    getById : function(id , callback) {
+    getById : function(id ,req,res, callback) {
+        RequestMiddleware.checkCredentials(req,res);
         memcached.get(base.config.get("cache_key") + "_grupos_"+id, function (err, data) {
             if(err){
-                request({ url:url+"/"+id, json:true}, (error , response ) => {
+                request({ url:url+"/"+id, json:true, headers: {"Authorization":req.session.auth.basic} }, (error , response ) => {
                     callback(error, response.body);
                 })
             } else {

@@ -8,15 +8,19 @@ const partialsPath = path.join(__dirname , './public/partials')
 const bodyParser = require('body-parser')
 const flash = require('connect-flash');
 const session = require('express-session');
-const cookieParser = require('cookie-parser');
 const rutasGrupos = require('./src/routes/GruposRoutes')
 const rutasProyectos = require('./src/routes/ProyectosRoutes')
 const rutasTableros = require('./src/routes/TablerosRoutes')
 const rutasUsuarios = require('./src/routes/UsuariosRoutes')
 const rutasTareas = require('./src/routes/TareasRoutes')
 const base = require("./src/services/BaseService");
+const contactoService = require("./src/services/ContactoService");
 const RequestMiddleware =  require("./src/middlewares/requestmiddleware");
 //handlebars engine and views location
+hbs.registerHelper('ifeq', function (a, b, options) {
+    if (a == b) { return options.fn(this); }
+    return options.inverse(this);
+});
 app.engine('hbs', hbs.express4({
 	partialsDir: partialsPath,
 	layoutsDir: viewsPath+"/layout",
@@ -46,21 +50,41 @@ app.get('/issuetracker/login' , (req, res) => {
 app.post('/issuetracker/login' , (req, res) => {
 	let userdata = req.body;
 	
-	RequestMiddleware.sendRequestSession({ url:base.config.get('host')+"grupo/page/1"}, userdata, req, (response) => {
+	RequestMiddleware.sendRequestSession({ url:base.config.get('host')+"user/logged"}, userdata, req, (response) => {
 		if(response.error == 'Unauthorized') {
 			res.render('login', {
 				message : response.message
 			})
 		} else {
-			req.session.auth = { username: userdata.email , basic : "Basic " + Buffer.from(userdata.email + ":" + userdata.pass).toString("base64")}
+			console.log(response.body);
+			req.session.auth = { username: userdata.email , basic : "Basic " + Buffer.from(userdata.email + ":" + userdata.pass).toString("base64") , role:response.body}
 			res.redirect('/issuetracker/home')
 		}
 	});
 })
 
+app.get('/issuetracker/logout' , (req, res) => {
+	req.session.destroy(function(err){
+		res.redirect('/issuetracker/login')
+	})
+})
+
 app.get('/issuetracker/register' , (req, res) => {
 	res.render('signin', {
 
+	})
+})
+
+app.get('/issuetracker/contacto' , (req, res) => {
+	res.render('contacto', {
+
+	})
+})
+app.post('/issuetracker/contacto' , (req, res) => {
+	contactoService.save(req.body , function(error, response){
+			res.render('login', {
+				message : "Mensaje enviado exitosamente."
+		})
 	})
 })
 
@@ -70,8 +94,14 @@ app.get('/issuetracker' , (req, res) => {
 })
 
 app.get('/issuetracker/home' , (req, res) => {
-		res.render('index', {
-	})
+
+	res.render('welcome', {
+		title: 'HOME',
+		layout: 'layout', // render without using a layout template
+		message:req.flash('message'),
+		username:req.session.auth.username
+	  }
+	)
 })
 
 app.get('/' , (req, res) => {

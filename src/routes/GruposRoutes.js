@@ -13,18 +13,19 @@ const GruposRoute  = function setRoutes(app) {
     })
     
     app.get('/issuetracker/grupos/:id' , (req, res) => {
-        GruposService.getById(req.params.id , (error , response ) => {
+        GruposService.getById(req.params.id ,req, res, (error , response ) => {
             if (error){
+                console.log(error);
+            } 
 
-            } else {
-                let body = response;
-                res.render('grupos/show', {
-                    title: 'Vista de Detalles de Grupo.',
-                    layout: 'layout', // render without using a layout template
-                    data: body
-                  }
-                )
-            }
+            let body = response;
+            res.render('grupos/show', {
+                title: 'Vista de Detalles de Grupo.',
+                layout: 'layout', // render without using a layout template
+                data: body
+              }
+            )
+
         });
     })
 
@@ -35,7 +36,7 @@ const GruposRoute  = function setRoutes(app) {
             if (error){
                 console.log(error);
             } else {
-                console.log(response.body)
+//                console.log(response.body)
                 let body = response.body;
                 let pag=1;                
                 res.render('grupos/list', {
@@ -52,12 +53,12 @@ const GruposRoute  = function setRoutes(app) {
     })
 
     
-    app.post('/issuetracker/grupos/save' ,[body('nombre').not().isEmpty()], (req, res) => {
+    app.post('/issuetracker/grupos/save' , [body('nombre').not().isEmpty()], (req, res) => {
         let gr = new GruposB();
         gr.setNombre(req.body.nombre);
-        GruposService.save(gr , (error, response ) => {
+        GruposService.save(gr , req, res, (error, response ) => {
             if (error) {
-
+ 
             } else {
                 res.redirect('/issuetracker/grupos/page/1')
             }
@@ -66,7 +67,7 @@ const GruposRoute  = function setRoutes(app) {
 
     app.post('/issuetracker/grupos/adduser' ,[body('grupo_id').not().isEmpty(), body('user_id').not().isEmpty()], (req, res) => {
         
-        GruposService.saveUser(req.body.grupo_id , req.body.user_id , (error, response ) => {
+        GruposService.saveUser(req.body.grupo_id , req.body.user_id ,req, res, (error, response ) => {
             if (error) {
 
             } else {
@@ -76,7 +77,7 @@ const GruposRoute  = function setRoutes(app) {
     })
 
     app.get('/issuetracker/grupos/remove/:id' , (req, res) => {   
-        GruposService.delete(req.params.id , (error , response) => {
+        GruposService.delete(req.params.id ,req, res, (error , response) => {
             let b = JSON.parse(response.body);
             req.flash('message', b.message);
             res.redirect('/issuetracker/grupos/page/1')

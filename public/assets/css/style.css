@@ -12,10 +12,23 @@
 .tab_name {
     padding-top: 10px;
     min-height: 50px;
-    background-color: #ccc;
+    background-color: #17a2b8;
 }
 
 .errorMsg{
     font-size: xx-large;
     padding: 90px;
+}
+
+.tareaDiv{
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    padding: 7px;
+    min-width: 97%;
+    margin-left: 1%;
+    margin-top: 3px;
+}
+.alert {
+    padding: 0px !important;
+    padding-left: 5% !important;
 }
